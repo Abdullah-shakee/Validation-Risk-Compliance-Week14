@@ -1,0 +1,116 @@
+Risk Notes — Security Validation and Compliance Evidence
+
+Project Name:
+Validation Risk Structuring and Compliance Evidence Compilation
+
+Target Application:
+OWASP Juice Shop Demo
+
+Tool Used:
+OWASP ZAP 2.17.0
+
+Scan Date:
+14 May 2026
+
+------------------------------------------------------------
+Risk Summary
+------------------------------------------------------------
+
+The security validation process identified several vulnerabilities
+within the target web application. The findings were analyzed and
+converted into structured validation risks for compliance review.
+
+The identified risks mainly involve:
+- missing security configurations,
+- cross-domain access weaknesses,
+- server information disclosure,
+- and exposure of internal metadata.
+
+No critical exploitation vulnerabilities such as SQL Injection
+or Remote Code Execution were detected during this scan.
+However, medium and low-level risks still require mitigation
+to improve overall security posture.
+
+------------------------------------------------------------
+Identified Risks
+------------------------------------------------------------
+
+VR-01
+Risk:
+Missing Content Security Policy (CSP) header.
+
+Impact:
+May allow malicious scripts and increase risk of Cross-Site
+Scripting (XSS) attacks.
+
+Mitigation:
+Configure strong CSP headers.
+
+------------------------------------------------------------
+
+VR-02
+Risk:
+Cross-Domain Misconfiguration.
+
+Impact:
+Unauthorized domains may access application resources.
+
+Mitigation:
+Restrict CORS configuration to trusted domains only.
+
+------------------------------------------------------------
+
+VR-03
+Risk:
+Server version information disclosure.
+
+Impact:
+Attackers may identify server technologies and known
+vulnerabilities.
+
+Mitigation:
+Hide or remove server version details from HTTP headers.
+
+------------------------------------------------------------
+
+VR-04
+Risk:
+Unix timestamp disclosure.
+
+Impact:
+Internal system information may be exposed.
+
+Mitigation:
+Remove unnecessary timestamp exposure from public files.
+
+------------------------------------------------------------
+
+VR-05
+Risk:
+Frontend framework and dependency exposure.
+
+Impact:
+Outdated frontend libraries may introduce future
+security vulnerabilities.
+
+Mitigation:
+Regularly update and monitor frontend dependencies.
+
+------------------------------------------------------------
+Overall Assessment
+------------------------------------------------------------
+
+The application demonstrates moderate security risk exposure.
+The discovered vulnerabilities should be mitigated before
+production deployment.
+
+All validation evidence, screenshots, scan reports,
+and mitigation recommendations have been documented
+for compliance and audit purposes.
+
+------------------------------------------------------------
+Prepared By:
+Validation Engineer
+
+Status:
+Completed
